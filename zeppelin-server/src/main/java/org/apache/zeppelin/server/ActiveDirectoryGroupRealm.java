@@ -220,7 +220,7 @@ public class ActiveDirectoryGroupRealm extends AbstractLdapRealm {
     SearchControls searchCtls = new SearchControls();
     searchCtls.setSearchScope(SearchControls.SUBTREE_SCOPE);
 
-    String searchFilter = "(&(objectClass=*)(userPrincipalName=*" + containString + "*))";
+    String searchFilter = "(&(objectClass=*)(sAMAccountName=*" + containString + "*))";
     Object[] searchArguments = new Object[]{containString};
 
     NamingEnumeration answer = ldapContext.search(searchBase, searchFilter, searchArguments,
